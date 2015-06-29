@@ -1,0 +1,7 @@
+.fc-content-skeleton tbody td[data-key="kp"] a:first-child,
+.fc-content-skeleton tbody td[data-key="ka"] a:first-child,
+.fc-content-skeleton tbody td[data-key="vp"] a:first-child,
+.fc-content-skeleton tbody td[data-key="cr"] a:first-child,
+.fc-content-skeleton tbody td[data-key="cs"] a:first-child {
+    margin-top: -135px;
+}

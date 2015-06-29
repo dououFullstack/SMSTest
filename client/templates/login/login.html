@@ -1,0 +1,97 @@
+<template name="login">
+<body class="login-content">
+    <!-- Login -->
+    <div class="lc-block toggled" id="l-login">
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="md md-person"></i></span>
+            <div class="fg-line">
+                <input type="text" class="form-control username" placeholder="用户名">
+            </div>
+        </div>
+
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="md md-accessibility"></i></span>
+            <div class="fg-line">
+                <input type="password" class="form-control password" placeholder="密码">
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="">
+                <i class="input-helper"></i>
+                保持登录状态
+            </label>
+        </div>
+
+        <a href="" class="btn btn-login btn-danger btn-float"><i class="md md-arrow-forward"></i></a>
+
+        <ul class="login-navigation">
+            <li data-block="#l-register" class="bgm-red">注册</li>
+            <li data-block="#l-forget-password" class="bgm-orange">忘记密码？</li>
+        </ul>
+    </div>
+
+    <!-- Register -->
+    <div class="lc-block" id="l-register">
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="md md-person"></i></span>
+            <div class="fg-line">
+                <input type="text" class="form-control username" placeholder="用户名">
+            </div>
+        </div>
+
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="md md-mail"></i></span>
+            <div class="fg-line">
+                <input type="text" class="form-control email" placeholder="邮箱地址">
+            </div>
+        </div>
+
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="md md-accessibility"></i></span>
+            <div class="fg-line">
+                <input type="password" class="form-control password" placeholder="密码">
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="">
+                <i class="input-helper"></i>
+                同意协议内容
+            </label>
+        </div>
+
+        <a href="" class="btn btn-login btn-danger btn-float"><i class="md md-arrow-forward"></i></a>
+
+        <ul class="login-navigation">
+            <li data-block="#l-login" class="bgm-green">登陆</li>
+            <li data-block="#l-forget-password" class="bgm-orange">忘记密码?</li>
+        </ul>
+    </div>
+
+    <!-- Forgot Password -->
+    <div class="lc-block" id="l-forget-password">
+        <p class="text-left">填写您的邮箱地址，点击确认后您的邮箱将收到系统自动发送的一封邮件，根据邮件中的链接即可重新设置账号密码</p>
+
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="md md-email"></i></span>
+            <div class="fg-line">
+                <input type="text" class="form-control email" placeholder="邮箱地址">
+            </div>
+        </div>
+
+        <a href="" class="btn btn-login btn-danger btn-float"><i class="md md-arrow-forward"></i></a>
+
+        <ul class="login-navigation">
+            <li data-block="#l-login" class="bgm-green">登陆</li>
+            <li data-block="#l-register" class="bgm-red">注册</li>
+        </ul>
+    </div>
+</body>
+</template>

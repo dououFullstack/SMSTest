@@ -1,0 +1,43 @@
+<template name="sidebar">
+    <aside id="sidebar">
+        <div class="sidebar-inner">
+            <div class="si-inner">
+                <div class="profile-menu">
+                    <a href="">
+                        <div class="profile-pic">
+                            <img src="img/profile-pics/1.jpg" alt="">
+                        </div>
+
+                        <div class="profile-info">
+                            {{ username }}
+                            <i class="md md-arrow-drop-down"></i>
+                        </div>
+                    </a>
+
+                    <ul class="main-menu">
+                        <li>
+                            <a href="profile-about.html"><i class="md md-person"></i>个人主页</a>
+                        </li>
+                        <li>
+                            <a href="" id="Logout"><i class="md md-history"></i>退出</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="main-menu">
+                    <li><a href="/"><i class="md md-home"></i>首页 </a></li>
+                    <li class="sub-menu">
+                        <a href="/"><i class="md  md-grade"></i>投票列表</a>
+                        <ul>
+                            <li><a class="active" href="/tasks/all">进行中</a></li>
+                            <li><a href="/">已结束</a></li>
+                            <li><a href="/">我的投票</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/"><i class="md md-settings-input-antenna"></i>用户列表 </a></li>
+                    <li class="active"><a href="/"><i class="md md-account-child"></i>个人设置</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+</template>

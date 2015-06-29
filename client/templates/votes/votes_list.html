@@ -1,0 +1,78 @@
+<template name="voteslist">
+    <section id="main">
+        <section id="content">
+            <div class="container votes-container">
+
+                {{#each votes}}
+                <div class="col-sm-4">
+                    <div class="card rating-list vote">
+                        <div class="listview fold" id="vote-item">
+                            <div class="lv-header">
+                                <div class="m-t-5">
+                                    {{title}}
+                                </div>
+
+                                <div class="clearfix"></div>
+
+                                <div class="rl-star">
+                                    <i class="md md-star active"></i>
+                                    <i class="md md-star active"></i>
+                                    <i class="md md-star active"></i>
+                                    <i class="md md-star"></i>
+                                    <i class="md md-star"></i>
+                                </div>
+
+                                <ul class="actions actions-alt" id="fc-actions">
+                                    <li class="dropdown open" id="vote-oper">
+                                        <a href="" id="vote-fold" data-toggle="dropdown" aria-expanded="true">
+                                            <i class="md-keyboard-arrow-down"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="lv-body">
+                                <div class="p-15">
+                                    {{#each candidates}}
+                                    <div class="lv-item">
+                                        <div class="media">
+                                            <div class="pull-left">
+                                                <div class="profile-pic">
+                                                    <img src="img/profile-pics/1.jpg" alt="" class="round-img">
+                                                </div>
+                                                {{name}}
+                                            </div>
+                                            <div class="pull-right">
+                                                <div class="checkbox m-b-15" style=" margin-top: 20px; ">
+                                                    <label>
+                                                    <input type="checkbox" value="">
+                                                    <i class="input-helper"></i></label>
+                                                </div>
+                                            </div>
+                                            <div class="media-body">
+                                                <p>{{slogan}}</p>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{result}}" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+
+                                </div>
+
+                                <div class="lv-footer">
+                                    <button class="btn btn-primary waves-effect waves-button waves-float">投票</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                {{/each}}
+
+            </div>
+        </section>
+    </section>
+</template>
