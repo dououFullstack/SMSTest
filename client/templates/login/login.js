@@ -78,6 +78,9 @@ Template.login.events({
                 console.log(err);
             } else {
                 console.log('User login success!');
+                $('html').removeClass('login-content');
+                $('body').removeClass('login-content');
+                Router.go('voteslist');
             }
         });
          return false; 
@@ -93,7 +96,6 @@ Template.login.events({
             if (err) {
                 console.log(err);
             } else {
-                // user.ownedTeamIds = user.ownedTeamIds || [];
                 console.log('注册成功！');
             }
         });

@@ -1,13 +1,18 @@
-AppController = RouteController.extend({
+// 整体配置
+Router.configure({
     loadingTemplate: 'loading',
-    layoutTemplate: 'layout'
-});
-
-UsersShowController = AppController.extend({
-    data: function () {
-        return {
-            user: Meteor.users.findOne({_id: this.params._id})
-        };
+    layoutTemplate: "layout",
+    notFoundTemplate: 'notFound',
+    before: function (pause) {
+        if (! Meteor.userId()) {
+            this.layout("loginLayout");
+            this.render('login');
+        } else {
+            this.next();
+        }
+    },
+    waitOn: function() {
+        return [];
     }
 });
 
@@ -22,36 +27,45 @@ Router.route('/', {
     }
 });
 
+// 投票历史记录
+Router.route('/voteshistory', {
+    name: 'history',
+    template: 'voteslist',
+    waitOn: function () {
+        return [];
+    },
+    data: function () {
+        return {};
+    }
+});
+
+// 个人主页
+Router.route('/profile', {
+    name: 'profile',
+    waitOn: function () {
+        return [];
+    },
+    data: function () {
+        return {};
+    }
+});
+
+// 简易的router配置
 Router.map(function() {
-    this.route('home');
+    // this.route('home');
     this.route('login');
 });
 
-Router.configure({
-    layoutTemplate: "layout",
-    before: function (pause) {
-        if (! Meteor.userId()) {
-            this.layout("loginLayout");
-            this.render('login');
-        } else {
-            this.next();
-        }
-    },
-    waitOn: function() {
-        return [];
-    }
-});
-
 var requireLogin = function() {
-  if (! Meteor.user()) {
-    if (Meteor.loggingIn()) {
-      this.render(this.loadingTemplate);
+    if (! Meteor.user()) {
+        if (Meteor.loggingIn()) {
+            this.render(this.loadingTemplate);
+        } else {
+            this.render('accessDenied');
+        }
     } else {
-      this.render('accessDenied');
+        this.next();
     }
-  } else {
-    this.next();
-  }
-}
+};
 
 Router.onBeforeAction(requireLogin, {only: '/create'});

@@ -93,3 +93,8 @@
 #vote-item.fold .lv-body {
     display: none;
 }
+
+#profile-hint {
+    line-height: 42px;
+    font-size: 24px;
+}

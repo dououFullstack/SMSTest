@@ -1,0 +1,263 @@
+<template name="profile">
+    <section id="content" class="team-wrapper">
+        <div class="container">
+
+            <div class="card" id="profile-main">
+                {{#with profile}}
+                    {{> profileCard}}
+                {{/with}}
+
+                <div class="pm-body clearfix">
+                    <ul class="tab-nav tn-justified">
+                        {{#with team}}
+                        <li class="waves-effect"><a href="#" style="font-size: 20px;">{{name}}</a></li>
+                        {{/with}}
+                    <!-- <li class="active waves-effect"><a href="#">D</a></li> -->
+                    </ul>
+
+                    <div class="pmb-block">
+                        <!-- 基于角色进行筛选的功能，暂时去掉
+                        <div class="p-header">
+                            <ul class="p-menu">
+                                <li><a href=""><i class="md md-people hidden-xs"></i> 管理员</a></li>
+                                <li class="active"><a href=""><i class="md md-account-circle hidden-xs"></i>贡献者</a></li>
+                                <li class="active"><a href=""><i class="md md-remove-red-eye hidden-xs"></i>访客</a></li>
+                            </ul>
+                        </div>
+                        -->
+
+                        <div class="contacts clearfix row" id="MemberList">
+                            {{#each members}}
+                                {{> CurrentMember}}
+                            {{/each}}
+                        </div>
+
+                        <!--
+                        <div class="load-more">
+                            <a href="" class="add-member"><i class="md md-add"></i>添加成员</a>
+                        </div>
+                        -->
+                    </div>
+                    {{> UserInfo}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{> NewMember}}
+</template>
+
+<template name="profileCard">
+    <div class="pm-overview c-overflow">
+        <div class="pmo-pic">
+            <div class="p-relative">
+                <a href="">
+                    <img src="{{photo}}" alt="">
+                </a>
+
+                <!--
+                <div class="dropdown pmop-message">
+                    <a data-toggle="dropdown" href="" class="btn bgm-white btn-float z-depth-1">
+                        <i class="md md-message"></i>
+                    </a>
+
+                    <div class="dropdown-menu">
+                        <textarea placeholder="填写300字个人简介"></textarea>
+
+                        <button class="btn bgm-green btn-icon"><i class="md md-send"></i></button>
+                    </div>
+                </div>
+
+                <a href="" class="pmop-edit">
+                    <i class="md md-camera-alt"></i> <span class="hidden-xs">上传更新你的头像</span>
+                </a>
+                -->
+            </div>
+
+
+            <div class="pmo-stat">
+                <h2 class="m-0 c-white">{{username}}</h2>
+                {{emailAddress}}
+            </div>
+        </div>
+
+        <div class="pmo-block pmo-contact hidden-xs">
+            <h2>联系方式</h2>
+
+            <ul>
+                <li><i class="md md-phone"></i>{{phone}}</li>
+                <li><i class="socicon socicon-skype"></i>{{website}}</li>
+                <li><i class="socicon socicon-twitter"></i>{{weiboUrl}}</li>
+                <li>
+                    <i class="md md-location-on"></i>
+                    <address class="m-b-0">{{address}}</address>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</template>
+
+<template name="UserInfo">
+    <div class="pmb-block">
+        <div class="pmbb-header">
+            <h2><i class="md md-person m-r-5"></i>基本信息</h2>
+        </div>
+        <div class="pmbb-body p-l-30">
+            <div class="pmbb-view">
+                <dl class="dl-horizontal">
+                    <dt>户主姓名</dt>
+                    <dd>王大锤</dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>性别</dt>
+                    <dd>男</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <div class="pmb-block">
+        <div class="pmbb-header">
+            <h2><i class="md md-account-balance m-r-5"></i>物业信息</h2>
+        </div>
+        <div class="pmbb-body p-l-30">
+            <div class="pmbb-view">
+                <dl class="dl-horizontal">
+                    <dt>授权人姓名</dt>
+                    <dd>王小仙</dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>组团号码</dt>
+                    <dd>8</dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>房号</dt>
+                    <dd>6</dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>房屋建筑面积</dt>
+                    <dd>300</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <div class="pmb-block">
+        <div class="pmbb-header">
+            <h2><i class="md md-phone m-r-5"></i>联系方式</h2>
+        </div>
+        <div class="pmbb-body p-l-30">
+            <div class="pmbb-view">
+                <dl class="dl-horizontal">
+                    <dt>手机号</dt>
+                    <dd>13800138000</dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>邮箱</dt>
+                    <dd>dachui.wang@gmail.com</dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>QQ</dt>
+                    <dd>318065268</dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>微信</dt>
+                    <dd>dachui.wang</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <div class="pmb-block">
+        <div class="t-view" data-tv-type="text">
+            <div class="tv-header media">
+                <a href="" class="tvh-user pull-left">
+                    <i id="profile-hint" class="md md-warning"></i>
+                </a>
+                <div class="media-body p-t-10">
+                    <strong class="d-block">变更以上信息，请及时和业委会联系</strong>
+                    <!-- <small class="c-gray"></small> -->
+                </div>
+            </div>
+            <div class="tv-body">
+                <p>业委会联系人</p>
+                <ul class="tvb-stats">
+                    <li class="tvbs-likes">王小仙</li>
+                </ul>
+                <div class="clearfix"></div>
+                <p>业委会联系电话</p>
+                <ul class="tvb-stats">
+                    <li class="tvbs-comments">95595</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="NewMember">
+    <div id="NewMemberHtml" style="display:none;">
+        <div class="col-md-3 col-sm-6 col-xs-6 wrapper">
+            <div class="c-item">
+                <a href="" class="ci-avatar">
+                    <img src="img/profile-pics/4.jpg" alt="">
+                </a>
+
+                <div class="c-info">
+                    <div class="fg-line fg-toggled">
+                        <input type="text" class="form-control username" placeholder="请输入用户名 ">
+                    </div>
+                    <div class="fg-line fg-toggled">
+                        <input type="text" class="form-control email" placeholder="请输入邮箱地址 ">
+                    </div>
+                </div>
+
+                <div class="c-footer" style="margin-top: 9px;">
+                    <div class="add-tl-actions">
+                        <a class="first-item add-cancel" href="" data-tl-action="dismiss"><i class="md md-close"></i></a>
+                        <a href="" data-tl-action="save" class="add-ok"><i class="md md-check"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="CurrentMember">
+    <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="c-item">
+            <a href="" class="ci-avatar">
+                <img src="{{imgUrl}}" alt="">
+            </a>
+
+            <div class="c-info">
+                <strong>{{name}}</strong>
+                <small>{{email}}</small>
+                <small>{{phone}}</small>
+            </div>
+
+            <div class="c-footer action-wrapper" data-name="{{name}}">
+                {{#if isAdmin}}
+                    {{#if isCandidate}}
+                        <button class="waves-effect"><i class="md {{roleClass}}"></i>已邀请用户</button>
+                    {{else}}
+                        <button class="waves-effect user-setting" data-toggle="dropdown" aria-expanded="true" data-role="{{role}}"><i class="md {{roleClass}}"></i>{{roleText}}</button>
+                    {{/if}}
+                    <ul class="custom-dropdown dropdown-menu" role="menu">
+                    {{#if itsMe}}
+                        <li><a href="#" style="color: #ea1c0d;" data-action="exit"><i class="md md-remove-circle hidden-xs"></i>退出并转让当前群</a></li>
+                    {{else}}
+                        <li><a data-action="admin" href="#"><i class="md md-people hidden-xs"></i> 设置为管理员</a></li>
+                        <li><a data-action="contributor" href="#"><i class="md md-account-circle hidden-xs"></i> 设置为贡献者</a></li>
+                        <li><a data-action="guest" href="#"><i class="md md-remove-red-eye hidden-xs"></i> 设置为访客</a></li>
+                        <li class="divider"></li>
+                        <li><a  data-action="remove" href="#" style="color: #ea1c0d;"><i class="md md-remove-circle hidden-xs"></i>移除该成员</a></li>
+                    {{/if}}
+                    </ul>
+                {{else}}
+                    <button class="waves-effect"><i class="md {{roleClass}}"></i>{{roleText}}</button>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</template>

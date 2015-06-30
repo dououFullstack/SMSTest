@@ -16,7 +16,7 @@
 
                     <ul class="main-menu">
                         <li>
-                            <a href="profile-about.html"><i class="md md-person"></i>个人主页</a>
+                            <a href="{{pathFor route='profile'}}"><i class="md md-person"></i>个人主页</a>
                         </li>
                         <li>
                             <a href="" id="Logout"><i class="md md-history"></i>退出</a>
@@ -25,7 +25,10 @@
                 </div>
 
                 <ul class="main-menu">
-                    <li><a href="/"><i class="md md-home"></i>首页 </a></li>
+                    <!-- <li><a href="/"><i class="md md-home"></i>首页 </a></li> -->
+                    <li><a href="{{pathFor route='voteslist'}}"><i class="md md-home"></i>投票列表 </a></li>
+                    <li><a href="{{pathFor route='history'}}"><i class="md md-grade"></i>我的投票</a></li>
+                    <!--
                     <li class="sub-menu">
                         <a href="/"><i class="md  md-grade"></i>投票列表</a>
                         <ul>
@@ -34,8 +37,8 @@
                             <li><a href="/">我的投票</a></li>
                         </ul>
                     </li>
-                    <li><a href="/"><i class="md md-settings-input-antenna"></i>用户列表 </a></li>
-                    <li class="active"><a href="/"><i class="md md-account-child"></i>个人设置</a></li>
+                    -->
+                    <li class="active"><a href="{{pathFor route='profile'}}"><i class="md md-account-child"></i>个人资料</a></li>
                 </ul>
             </div>
         </div>
