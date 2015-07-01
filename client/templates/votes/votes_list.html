@@ -14,13 +14,9 @@
 
                                 <div class="clearfix"></div>
 
-                                <div class="rl-star">
-                                    <i class="md md-star active"></i>
-                                    <i class="md md-star active"></i>
-                                    <i class="md md-star active"></i>
-                                    <i class="md md-star"></i>
-                                    <i class="md md-star"></i>
-                                </div>
+                                <ul class="lv-attrs">
+                                    <li class="{{typeColor}}">{{typeName}}</li>
+                                </ul>
 
                                 <ul class="actions actions-alt" id="fc-actions">
                                     <li class="dropdown open" id="vote-oper">
@@ -32,38 +28,18 @@
                             </div>
 
                             <div class="lv-body">
+                                {{#if readonly}}
                                 <div class="p-15">
                                     {{#each candidates}}
-                                    <div class="lv-item">
-                                        <div class="media">
-                                            <div class="pull-left">
-                                                <div class="profile-pic">
-                                                    <img src="img/profile-pics/1.jpg" alt="" class="round-img">
-                                                </div>
-                                                {{name}}
-                                            </div>
-                                            <div class="pull-right">
-                                                <div class="checkbox m-b-15" style=" margin-top: 20px; ">
-                                                    <label>
-                                                    <input type="checkbox" value="">
-                                                    <i class="input-helper"></i></label>
-                                                </div>
-                                            </div>
-                                            <div class="media-body">
-                                                <p>{{slogan}}</p>
-                                                <div class="progress">
-                                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{result}}" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        {{> voteresult}}
                                     {{/each}}
-
                                 </div>
-
-                                {{#if readonly}}
                                 {{else}}
+                                <div class="p-15">
+                                    {{#each candidates}}
+                                        {{> CandidateSummary}}
+                                    {{/each}}
+                                </div>
                                 <div class="lv-footer">
                                     <button class="btn btn-primary waves-effect waves-button waves-float">投票</button>
                                 </div>
@@ -78,4 +54,53 @@
             </div>
         </section>
     </section>
+</template>
+
+<template name="CandidateSummary">
+    <div class="lv-item grey-border">
+        <div class="media">
+            <div class="pull-left">
+                <div class="profile-pic">
+                    <a href="{{pathFor route='candidate' uid=this.uid}}"><img src="{{userimg}}" alt="" class="round-img"></a>
+                </div>
+                <p class="name m-b-0 text-center c-gray f-s">{{name}}</p>
+                <p class="group m-b-0 text-center c-gray f-s">组团号：{{groupNo}}</p>
+            </div>
+            <div class="pull-right">
+                <div class="checkbox m-b-15" style=" margin-top: 20px; margin-right: -25px;">
+                    <label>
+                    <input type="checkbox" value="">
+                    <i class="input-helper"></i></label>
+                </div>
+            </div>
+            <div class="media-body">
+                <p>{{slogan}}</p>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="voteresult">
+    <div class="lv-item grey-border">
+        <div class="media">
+            <div class="pull-left">
+                <div class="profile-pic">
+                    <a href="{{pathFor route='candidate' uid=this.uid}}"><img src="{{userimg}}" alt="" class="round-img"></a>
+                </div>
+                <p class="name m-b-0 text-center c-gray f-s">{{name}}</p>
+                <p class="group m-b-0 text-center c-gray f-s">组团号：{{groupNo}}</p>
+            </div>
+            <div class="pull-right">
+                {{#with result}}
+                <dl>
+                    <dd></dd>
+                    <dd>票数：{{peopleCount}}</dd>
+                    <dd>占比：{{peopleRatio}}%</dd>
+                    <dd>面积：{{roomsizeCount}}</dd>
+                    <dd>占比：{{roomsizeRatio}}</dd>
+                </dl>
+                {{/with}}
+            </div>
+        </div>
+    </div>
 </template>

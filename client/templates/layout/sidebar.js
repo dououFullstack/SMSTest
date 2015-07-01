@@ -13,6 +13,9 @@ Template.sidebar.helpers({
             return '';
         }
     },
+    myId: function () {
+        return Meteor.userId();
+    }
 });
 
 Template.sidebar.events({

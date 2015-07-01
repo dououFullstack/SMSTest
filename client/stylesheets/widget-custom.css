@@ -98,3 +98,22 @@
     line-height: 42px;
     font-size: 24px;
 }
+.fl {
+    float: left;
+}
+.lgreen {
+    color: #8BC34A !important;
+}
+.orange {
+    color: #FF9800 !important;
+}
+.grey-border {
+    border-bottom: solid 1px #e0e0e0;
+}
+.f-s {
+    font-size: smaller;
+}
+.back-bottom {
+    text-align: center;
+    padding-bottom: 20px;
+}

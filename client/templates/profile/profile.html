@@ -2,10 +2,8 @@
     <section id="content" class="team-wrapper">
         <div class="container">
 
-            <div class="card" id="profile-main">
-                {{#with profile}}
-                    {{> profileCard}}
-                {{/with}}
+            <div class="card" id="profile-main" data-uid="{{uid}}">
+                {{> profileCard}}
 
                 <div class="pm-body clearfix">
                     <ul class="tab-nav tn-justified">
@@ -52,7 +50,7 @@
         <div class="pmo-pic">
             <div class="p-relative">
                 <a href="">
-                    <img src="img/contacts/15.jpg" alt="">
+                    <img src="/img/profile-pics/{{uid}}.jpg" alt="">
                 </a>
 
                 <!--

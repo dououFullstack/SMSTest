@@ -1,4 +1,13 @@
 Template.voteslist.helpers({
+    typeName: function () {
+        return this.type == -1 ? '全体' : '组团';
+    },
+    typeColor: function () {
+        return this.type == -1 ? 'lgreen' : 'orange';
+    },
+    groupNo: function () {
+        return 1;
+    }
                /*
     votes: function () {
     title
@@ -49,6 +58,18 @@ Template.voteslist.helpers({
         }];
     }
     */
+});
+
+Template.CandidateSummary.helpers({
+    groupNo: function () {
+        return 1;
+    }
+});
+
+Template.voteresult.helpers({
+    groupNo: function () {
+        return 1;
+    }
 });
 
 var switchOper = function ($i, $vote) {

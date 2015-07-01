@@ -28,26 +28,192 @@ Router.route('/', {
             votes: [{
                 title: '关于小区垃圾桶处理方式的投票',
                 desc: '建议每天及时收垃圾，不要让垃圾过夜等等等等',
+                type: -1,
                 candidates: [{
                     name: '王大锤',
-                    slogan: '我锤故我在',
-                    result: 27
+                    userimg: 'img/profile-pics/1.jpg',
+                    uid: 1,
+                    slogan: '能给大家提供帮助一直都是我的心愿',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
                 }, {
                     name: '李小五',
-                    slogan: '我的礼物很多',
-                    result: 42
+                    userimg: 'img/profile-pics/2.jpg',
+                    uid: 2,
+                    slogan: '每一个抉择背后都是一张暖心的笑脸，世界终将更加美好。',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '王晨光',
+                    userimg: 'img/profile-pics/3.jpg',
+                    uid: 3,
+                    slogan: '清晨的阳光洒向世界，万物开始生长。愿我们都有美好生活！',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
                 }]
             }, {
                 title: '关于9号楼养狗状况的投票',
                 desc: '建议对那些任由狗在楼道内大便的业主进行处罚',
+                type: 9,
                 candidates: [{
-                    name: '刘晓萌',
-                    slogan: '给大家一个舒适的环境',
-                    result: 52
+                    name: '王大锤',
+                    userimg: 'img/profile-pics/1.jpg',
+                    uid: 1,
+                    slogan: '能给大家提供帮助一直都是我的心愿',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
                 }, {
                     name: '李小五',
-                    slogan: '我的礼物很多',
-                    result: 32
+                    userimg: 'img/profile-pics/2.jpg',
+                    uid: 2,
+                    slogan: '每一个抉择背后都是一张暖心的笑脸，世界终将更加美好。',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '王晨光',
+                    userimg: 'img/profile-pics/3.jpg',
+                    uid: 3,
+                    slogan: '清晨的阳光洒向世界，万物开始生长。愿我们都有美好生活！',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }]
+            }, {
+                title: '关于8号楼电梯申请维护的投票',
+                type: 8,
+                desc: '',
+                candidates: [{
+                    name: '王大锤',
+                    userimg: 'img/profile-pics/1.jpg',
+                    uid: 1,
+                    slogan: '能给大家提供帮助一直都是我的心愿',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '李小五',
+                    userimg: 'img/profile-pics/2.jpg',
+                    uid: 2,
+                    slogan: '每一个抉择背后都是一张暖心的笑脸，世界终将更加美好。',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '王晨光',
+                    userimg: 'img/profile-pics/3.jpg',
+                    uid: 3,
+                    slogan: '清晨的阳光洒向世界，万物开始生长。愿我们都有美好生活！',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }]
+            }, {
+                title: '关于小区遛狗情况的投票',
+                desc: '',
+                type: -1,
+                candidates: [{
+                    name: '王大锤',
+                    userimg: 'img/profile-pics/1.jpg',
+                    uid: 1,
+                    slogan: '能给大家提供帮助一直都是我的心愿',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '李小五',
+                    userimg: 'img/profile-pics/2.jpg',
+                    uid: 2,
+                    slogan: '每一个抉择背后都是一张暖心的笑脸，世界终将更加美好。',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '王晨光',
+                    userimg: 'img/profile-pics/3.jpg',
+                    uid: 3,
+                    slogan: '清晨的阳光洒向世界，万物开始生长。愿我们都有美好生活！',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }]
+            }, {
+                title: '关于小区内禁止抽烟的投票',
+                desc: '',
+                type: -1,
+                candidates: [{
+                    name: '王大锤',
+                    userimg: 'img/profile-pics/1.jpg',
+                    uid: 1,
+                    slogan: '能给大家提供帮助一直都是我的心愿',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '李小五',
+                    userimg: 'img/profile-pics/2.jpg',
+                    uid: 2,
+                    slogan: '每一个抉择背后都是一张暖心的笑脸，世界终将更加美好。',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '王晨光',
+                    userimg: 'img/profile-pics/3.jpg',
+                    uid: 3,
+                    slogan: '清晨的阳光洒向世界，万物开始生长。愿我们都有美好生活！',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
                 }]
             }]
         };
@@ -67,14 +233,78 @@ Router.route('/votesgroup', {
             votes: [{
                 title: '关于9号楼养狗状况的投票',
                 desc: '建议对那些任由狗在楼道内大便的业主进行处罚',
+                type: 9,
                 candidates: [{
-                    name: '刘晓萌',
-                    slogan: '给大家一个舒适的环境',
-                    result: 52
+                    name: '王大锤',
+                    userimg: 'img/profile-pics/1.jpg',
+                    uid: 1,
+                    slogan: '能给大家提供帮助一直都是我的心愿',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
                 }, {
                     name: '李小五',
-                    slogan: '我的礼物很多',
-                    result: 32
+                    userimg: 'img/profile-pics/2.jpg',
+                    uid: 2,
+                    slogan: '每一个抉择背后都是一张暖心的笑脸，世界终将更加美好。',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '王晨光',
+                    userimg: 'img/profile-pics/3.jpg',
+                    uid: 3,
+                    slogan: '清晨的阳光洒向世界，万物开始生长。愿我们都有美好生活！',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }]
+            }, {
+                title: '关于8号楼电梯申请维护的投票',
+                desc: '',
+                type: 8,
+                candidates: [{
+                    name: '王大锤',
+                    userimg: 'img/profile-pics/1.jpg',
+                    uid: 1,
+                    slogan: '能给大家提供帮助一直都是我的心愿',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '李小五',
+                    userimg: 'img/profile-pics/2.jpg',
+                    uid: 2,
+                    slogan: '每一个抉择背后都是一张暖心的笑脸，世界终将更加美好。',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '王晨光',
+                    userimg: 'img/profile-pics/3.jpg',
+                    uid: 3,
+                    slogan: '清晨的阳光洒向世界，万物开始生长。愿我们都有美好生活！',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
                 }]
             }]
         };
@@ -94,14 +324,116 @@ Router.route('/votes/all', {
             votes: [{
                 title: '关于小区垃圾桶处理方式的投票',
                 desc: '建议每天及时收垃圾，不要让垃圾过夜等等等等',
+                type: -1,
                 candidates: [{
                     name: '王大锤',
-                    slogan: '我锤故我在',
-                    result: 27
+                    userimg: 'img/profile-pics/1.jpg',
+                    uid: 1,
+                    slogan: '能给大家提供帮助一直都是我的心愿',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
                 }, {
                     name: '李小五',
-                    slogan: '我的礼物很多',
-                    result: 42
+                    userimg: 'img/profile-pics/2.jpg',
+                    uid: 2,
+                    slogan: '每一个抉择背后都是一张暖心的笑脸，世界终将更加美好。',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '王晨光',
+                    userimg: 'img/profile-pics/3.jpg',
+                    uid: 3,
+                    slogan: '清晨的阳光洒向世界，万物开始生长。愿我们都有美好生活！',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }]
+            }, {
+                title: '关于小区遛狗情况的投票',
+                desc: '',
+                type: -1,
+                candidates: [{
+                    name: '王大锤',
+                    userimg: 'img/profile-pics/1.jpg',
+                    uid: 1,
+                    slogan: '能给大家提供帮助一直都是我的心愿',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '李小五',
+                    userimg: 'img/profile-pics/2.jpg',
+                    uid: 2,
+                    slogan: '每一个抉择背后都是一张暖心的笑脸，世界终将更加美好。',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '王晨光',
+                    userimg: 'img/profile-pics/3.jpg',
+                    uid: 3,
+                    slogan: '清晨的阳光洒向世界，万物开始生长。愿我们都有美好生活！',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }]
+            }, {
+                title: '关于小区内禁止抽烟的投票',
+                desc: '',
+                type: -1,
+                candidates: [{
+                    name: '王大锤',
+                    userimg: 'img/profile-pics/1.jpg',
+                    uid: 1,
+                    slogan: '能给大家提供帮助一直都是我的心愿',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '李小五',
+                    userimg: 'img/profile-pics/2.jpg',
+                    uid: 2,
+                    slogan: '每一个抉择背后都是一张暖心的笑脸，世界终将更加美好。',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '王晨光',
+                    userimg: 'img/profile-pics/3.jpg',
+                    uid: 3,
+                    slogan: '清晨的阳光洒向世界，万物开始生长。愿我们都有美好生活！',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
                 }]
             }]
         };
@@ -121,15 +453,41 @@ Router.route('/myvotes', {
             votes: [{
                 title: '9号楼业主选举',
                 desc: '9号楼进行的业主选举情况的判定',
+                type: 9,
                 readonly: false,
                 candidates: [{
-                    name: '刘晓萌',
-                    slogan: '给大家一个舒适的环境',
-                    result: 52
+                    name: '王大锤',
+                    userimg: 'img/profile-pics/1.jpg',
+                    uid: 1,
+                    slogan: '能给大家提供帮助一直都是我的心愿',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
                 }, {
                     name: '李小五',
-                    slogan: '我的礼物很多',
-                    result: 32
+                    userimg: 'img/profile-pics/2.jpg',
+                    uid: 2,
+                    slogan: '每一个抉择背后都是一张暖心的笑脸，世界终将更加美好。',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '王晨光',
+                    userimg: 'img/profile-pics/3.jpg',
+                    uid: 3,
+                    slogan: '清晨的阳光洒向世界，万物开始生长。愿我们都有美好生活！',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
                 }]
             }]
         };
@@ -149,15 +507,44 @@ Router.route('/voteshistory', {
             votes: [{
                 title: '1号楼业主选举',
                 desc: '1号楼进行的业主选举情况的判定',
+                type: 1,
                 readonly: true,
                 candidates: [{
-                    name: '刘晓萌',
-                    slogan: '给大家一个舒适的环境',
-                    result: 99
+                    name: '王大锤',
+                    userimg: 'img/profile-pics/1.jpg',
+                    uid: 1,
+                    slogan: '能给大家提供帮助一直都是我的心愿',
+                    groupNo: 1,
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
                 }, {
                     name: '李小五',
-                    slogan: '我的礼物很多',
-                    result: 88
+                    userimg: 'img/profile-pics/2.jpg',
+                    uid: 2,
+                    slogan: '每一个抉择背后都是一张暖心的笑脸，世界终将更加美好。',
+                    groupNo: 1,
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
+                }, {
+                    name: '王晨光',
+                    userimg: 'img/profile-pics/3.jpg',
+                    uid: 3,
+                    groupNo: 1,
+                    slogan: '清晨的阳光洒向世界，万物开始生长。愿我们都有美好生活！',
+                    result: {
+                        peopleCount: 10,
+                        peopleRatio: 50,
+                        roomsizeCount: 1000,
+                        roomsizeRatio: 50
+                    }
                 }]
             }]
         };
@@ -172,7 +559,22 @@ Router.route('/profile', {
         return [];
     },
     data: function () {
-        return {};
+        return {
+        };
+    }
+});
+
+// 
+Router.route('/candidate/:uid', {
+    name: 'candidate',
+    waitOn: function () {
+        Session.set('pageTitle', '候选人信息');
+        return [];
+    },
+    data: function () {
+        return {
+            uid: this.params.uid
+        };
     }
 });
 
