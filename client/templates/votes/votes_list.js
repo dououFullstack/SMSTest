@@ -1,6 +1,6 @@
 Template.voteslist.helpers({
-    votes: function () {
                /*
+    votes: function () {
     title
     desc
     userId 创建人id
@@ -21,7 +21,7 @@ Template.voteslist.helpers({
         peopleRatio 投票人的百分比
         roomsizeCount 参与投票的面积总数
         roomsizeRatio 所占面积的百分比
-    */
+
         return [{
             title: '关于小区垃圾桶处理方式的投票',
             desc: '建议每天及时收垃圾，不要让垃圾过夜等等等等',
@@ -48,6 +48,7 @@ Template.voteslist.helpers({
             }]
         }];
     }
+    */
 });
 
 var switchOper = function ($i, $vote) {

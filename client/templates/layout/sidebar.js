@@ -19,4 +19,9 @@ Template.sidebar.events({
     'click #Logout': function () {
         Meteor.logout();
     },
+    'click #sidebar .main-menu a': function (event) {
+        if ($(event.target).data('go') != 'no') {
+            $('#menu-trigger').trigger('click');
+        }
+    }
 });

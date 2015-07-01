@@ -9,30 +9,48 @@
                 </div>
             </li>
 
-            <li class="logo hidden-xs">
+            <li class="logo">
                 <a href="index.html">{{pageTitle}}</a>
             </li>
 
             <li class="pull-right">
-            <ul class="top-menu">
-                <li class="dropdown">
-                    <a data-toggle="dropdown" class="tm-message" href=""><!-- <i class="tmn-counts">6</i> --></a>
-                    <div class="dropdown-menu dropdown-menu-lg pull-right">
-                        <div class="listview">
-                            <div class="lv-header">
-                                站内信
+                <ul class="top-menu">
+                    <!--
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="tm-message" href=""> <i class="tmn-counts">6</i> </a>
+                        <div class="dropdown-menu dropdown-menu-lg pull-right">
+                            <div class="listview">
+                                <div class="lv-header">
+                                    站内信
+                                </div>
+                                <div class="lv-body c-overflow">
+                                    {{#each messages}}
+                                        {{> HeaderMessageItem}}
+                                    {{/each}}
+                                </div>
+                                <a class="lv-footer" href="">查看所有</a>
                             </div>
-                            <div class="lv-body c-overflow">
-                                {{#each messages}}
-                                    {{> HeaderMessageItem}}
-                                {{/each}}
-                            </div>
-                            <a class="lv-footer" href="">查看所有</a>
                         </div>
-                    </div>
-                </li>
+                    </li>
+                    -->
+
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="tm-settings" href=""></a>
+                        <ul class="dropdown-menu dm-icon pull-right">
+                            <li>
+                                <a data-action="fullscreen" href="{{pathFor route='voteslist'}}"><i class="md md-fullscreen"></i>所有投票</a>
+                            </li>
+                            <li>
+                                <a data-action="clear-localstorage" href="{{pathFor route='votesall'}}"><i class="md md-delete"></i>全体业主投票</a>
+                            </li>
+                            <li>
+                                <a href="{{pathFor route='votesgroup' id=5}}"><i class="md md-person"></i>组团投票</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
+
         </ul>
 
         <!-- Top Search Content -->
