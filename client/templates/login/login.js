@@ -67,7 +67,11 @@ Template.login.rendered = function () {
 
 Template.login.helpers({
   errorMessages: function() {
-    return _.values(Session.get(ERRORS_KEY));
+    if(Session.get(ERRORS_KEY)) {
+      return _.values(Session.get(ERRORS_KEY));
+    } else {
+      return null;
+    }
   },
   errorClass: function(key) {
     return Session.get(ERRORS_KEY)[key] && 'error';
@@ -89,12 +93,13 @@ Template.login.events({
     if (_.keys(errors).length) {
       return;
     }
-
-    Meteor.call("sendCodeSmsByYunpian", phoneNum);
-
-    temp.$('[name=phoneNum]').attr("readonly", true);
-
-    alert("短信已发送");
+    Meteor.call('isMobileValid', phoneNum, function (error, result) {
+      if(result) {
+        Meteor.call("sendCodeSmsByYunpian", phoneNum);
+        temp.$('[name=phoneNum]').attr("readonly", true);
+        alert("短信已发送");
+      }
+    });
   },
   'click #login-with-coupon': function(event, template) {
     event.preventDefault();
