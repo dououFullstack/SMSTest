@@ -2,19 +2,30 @@
 <body class="login-content">
     <!-- Login -->
     <div class="lc-block toggled" id="l-login">
+      {{#if errorMessages}}
+        <div class="list-errors">
+          {{#each errorMessages}}
+            <div class="list-item">{{this}}</div>
+          {{/each}}
+        </div>
+      {{/if}}
+
         <div class="input-group m-b-20">
             <span class="input-group-addon"><i class="md md-person"></i></span>
             <div class="fg-line">
-                <input type="text" class="form-control username" placeholder="用户名">
+                <input type="text" name="phoneNum" class="form-control username" placeholder="手机号" value="18957296162">
             </div>
         </div>
 
         <div class="input-group m-b-20">
             <span class="input-group-addon"><i class="md md-accessibility"></i></span>
             <div class="fg-line">
-                <input type="password" class="form-control password" placeholder="密码">
+                <input type="password" name="couponCode" class="form-control password" placeholder="验证码">
             </div>
         </div>
+        <button type="button" id="sendCodeBtn" class="btn-primary">发送验证码</button>
+        <button type="submit" id="login-with-coupon" class="btn-primary">登录</button>
+
 
         <div class="clearfix"></div>
 

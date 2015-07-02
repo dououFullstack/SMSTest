@@ -1,3 +1,16 @@
+var ERRORS_KEY = 'signinErrors';
+
+Meteor.loginWithCoupon = function(phoneNum, couponCode, callback) {
+  //create a login request with phoneNum: true, so our loginHandler can handle this request
+  var loginRequest = {phoneNum: phoneNum, couponCode: couponCode};
+
+  //send the login request
+  Accounts.callLoginMethod({
+    methodArguments: [loginRequest],
+    userCallback: callback
+  });
+};
+
 Template.login.rendered = function () {
     // hack以符合模板的样式
     $('html').addClass('login-content');
@@ -52,7 +65,59 @@ Template.login.rendered = function () {
     Waves.init();
 };
 
+Template.login.helpers({
+  errorMessages: function() {
+    return _.values(Session.get(ERRORS_KEY));
+  },
+  errorClass: function(key) {
+    return Session.get(ERRORS_KEY)[key] && 'error';
+  }
+});
+
 Template.login.events({
+  'click #sendCodeBtn': function(event, temp){
+
+    var errors = {};
+
+    var phoneNum = temp.$('[name=phoneNum]').val();
+
+    if (! phoneNum) {
+      errors.phoneNum = 'phoneNum is required';
+    }
+
+    Session.set(ERRORS_KEY, errors);
+    if (_.keys(errors).length) {
+      return;
+    }
+
+    Meteor.call("sendCodeSmsByYunpian", phoneNum);
+
+    temp.$('[name=phoneNum]').attr("readonly", true);
+
+    alert("短信已发送");
+  },
+  'click #login-with-coupon': function(event, template) {
+    event.preventDefault();
+
+    var errors = {};
+
+    var phoneNum = template.$('[name=phoneNum]').val();
+    var couponCode = template.$('[name=couponCode]').val();
+
+    if (! phoneNum) {
+      errors.phoneNum = 'phoneNum is required';
+    }
+
+    if (! couponCode) {
+      errors.coupon = 'coupon is required';
+    }
+
+    Session.set(ERRORS_KEY, errors);
+    if (_.keys(errors).length) {
+      return;
+    }
+    Meteor.loginWithCoupon(phoneNum, couponCode);
+  },
     // login面板下部的小圆点的导航处理
     'click .login-navigation > li': function (e) {
         var $this = $(e.target);
@@ -83,7 +148,7 @@ Template.login.events({
                 Router.go('voteslist');
             }
         });
-         return false; 
+         return false;
     },
 
     'click #l-register > .btn-login': function (e) {
