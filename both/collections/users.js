@@ -14,3 +14,16 @@
          size (房屋建筑面积)
          groupId (组团编号)
 */
+
+
+
+
+// 通过管理员上传的正确的用户信息，存入 validUsers 数据库中
+/*
+{
+    name: '李明'
+    mobile: '13691584999'
+    group: '第一组团'
+}
+*/
+ValidUsers = new Mongo.Collection('validUsers');
