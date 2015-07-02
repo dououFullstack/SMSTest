@@ -40,16 +40,16 @@ Meteor.methods({
   }
 });
 
-// Meteor.users.allow({
-//   'insert': function(userId, doc) {
-//     return userId;
-//   },
-//   'update': function(userId, doc, fields, modifier) {
-//     //return true;
-//     console.log(doc);
-//     return true;
-//   },
-//   'remove': function(userId, doc) {
-//     return userId === doc.userId;
-//   }
-// });
+ValidUsers.allow({
+  'insert': function(userId, doc) {
+    return true;
+  },
+  'update': function(userId, doc, fields, modifier) {
+    //return true;
+    console.log(doc);
+    return true;
+  },
+  'remove': function(userId, doc) {
+    return userId === doc.userId;
+  }
+});

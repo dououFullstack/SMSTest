@@ -597,3 +597,18 @@ var requireLogin = function() {
 };
 
 Router.onBeforeAction(requireLogin, {only: '/create'});
+
+// 
+Router.route('/import', {
+    name: 'import',
+    waitOn: function () {
+        Session.set('pageTitle', '导入excel文件');
+        Meteor.subscribe("validUsers");
+        return [];
+    },
+    data: function () {
+        return {
+            users: ValidUsers.find()
+        };
+    }
+});
