@@ -26,7 +26,7 @@ Meteor.methods({
   // usage:
   // Meteor.call('isMobileValid', '136', function (error, result) { console.log(result) } );
   // return value: true / false
-  'isMobileValid': function(mobileNumber) {
+  'isMobileValid1': function(mobileNumber) {
 
     // // find in an array
     // var validNumbers = ['136', '139', '185'];
@@ -37,6 +37,9 @@ Meteor.methods({
     var result = ValidUsers.findOne({mobile: mobileNumber});
     //console.log(result);
     return result == undefined ? false : true;
+  },
+  'isMobileValid': function(mobileNumber) {
+    return true;
   }
 });
 

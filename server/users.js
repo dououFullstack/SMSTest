@@ -23,8 +23,11 @@ Meteor.methods({
     var couponCode = Math.floor(Random.fraction() * 1000000) + '';
 
     var domain = "http://yunpian.com/v1/sms/send.json";
-    var apikey = "1f9637998a397fab9727501c59763a3d";
-    var url = domain + "?apikey=" + apikey + "&mobile=" + phoneNum + "&text=【毛豆网】您的验证码是" + couponCode;
+    // var apikey = "1f9637998a397fab9727501c59763a3d";
+    //竇恆山apikey
+    var apikey = "7a11ac9b8eef8bf449df3fe7df2ca06e";
+
+    var url = domain + "?apikey=" + apikey + "&mobile=" + phoneNum + "&text=【北京毛豆网】您的验证码是" + couponCode;
 
     HTTP.post(url, {
         headers: {
@@ -33,8 +36,8 @@ Meteor.methods({
         }
       }, function(err, result){
         if (!err) {}
-        console.log(result.statusCode);
-        console.log(result.headers);
+        console.log("+++++++++++++++statusCode", result.statusCode);
+        console.log("+++++++++++++++headers", result.headers);
       }
     );
 

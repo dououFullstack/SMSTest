@@ -1,15 +1,15 @@
 Meteor.startup(function() {
   var users = [
     {
-      mobile: '13691584139',
+      mobile: '13412133311',
       name: '李明',
       group: '第一组团'
     },
     {
-      mobile: '18957296162',
+      mobile: '18511198391',
       name: '刘吉洋',
       group: '第二组团'
-    },    
+    },
     {
       mobile: '13691584139',
       name: '杨帆',
@@ -25,6 +25,6 @@ Meteor.startup(function() {
         name: user.name,
         group: user.group,
       });
-    }); 
+    });
   }
 });

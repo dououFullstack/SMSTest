@@ -80,7 +80,7 @@ Template.login.helpers({
 
 Template.login.events({
   'click #sendCodeBtn': function(event, temp){
-
+   alert('sendcodebtn');
     var errors = {};
 
     var phoneNum = temp.$('[name=phoneNum]').val();
@@ -94,6 +94,7 @@ Template.login.events({
       return;
     }
     Meteor.call('isMobileValid', phoneNum, function (error, result) {
+     console.log("ismobilevalid result", result);
       if(result) {
         Meteor.call("sendCodeSmsByYunpian", phoneNum);
         temp.$('[name=phoneNum]').attr("readonly", true);
@@ -102,6 +103,7 @@ Template.login.events({
     });
   },
   'click #login-with-coupon': function(event, template) {
+   alert('loginwithcoupon');
     event.preventDefault();
 
     var errors = {};
